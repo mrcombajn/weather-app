@@ -7,6 +7,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.3",
+    "chalk": "^5.2.0",
     "npm": "^9.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -39,7 +40,6 @@
   },
   "description": "A simple weather app.",
   "main": "index.js",
-  "devDependencies": {},
   "keywords": [
     "weather"
   ],
@@ -52,5 +52,6 @@
   "bugs": {
     "url": "https://github.com/mrcombajn/weather-app/issues"
   },
-  "homepage": "https://github.com/mrcombajn/weather-app#readme"
+  "homepage": "https://github.com/mrcombajn/weather-app#readme",
+  "proxy": "http://localhost:3000"
 }
