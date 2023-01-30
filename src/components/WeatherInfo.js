@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import WeatherTile from "./WeatherTile";
+
 
 class WeatherInfo extends Component {
 
@@ -7,7 +9,8 @@ class WeatherInfo extends Component {
     }
     render() {
         return (
-            <div>{this.props.actualCityName}</div>);
+            console.log(this.props.state)
+        );
     }
 }
 
