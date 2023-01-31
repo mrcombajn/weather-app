@@ -1,11 +1,9 @@
 import './App.css';
 import React, {Component} from "react";
+import axios from "axios";
 
 class App extends Component {
 
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return(
@@ -17,17 +15,24 @@ class App extends Component {
 
 }
 
-function contactApi() {
-    return (
-        fetch('https://api.openweathermap.org/data/2.5/weather?lat=54.3776333928692&lon=18.620147474188297&appid=8bfb9fe227f2439c991d251b4b87224d').then(e => e.json())
-    );
-}
-
 class WeatherInfo extends Component {
+
+    state = {
+        weather: []
+    }
     constructor(props) {
         super(props);
-        this.state = {actualCityWeather: contactApi()}
-        console.log(this.state.actualCityWeather.value)
+        this.contactApi();
+        console.log(this.contactApi())
+
+    }
+
+    contactApi() {
+        return axios
+            .get()
+            .then((res) => {
+                this.setState({weather: res.data})
+            })
     }
 
     render() {
