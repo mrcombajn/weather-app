@@ -1,19 +1,29 @@
 import './App.css';
-import CityForm from './components/CityForm.js';
 import React, {Component} from "react";
+import CityForm from "./CityForm/CityForm";
+import WeatherInfo from "./components/WeatherInfo";
 
 class App extends Component {
 
+    state = {
+        actualCity: ""
+    }
+
+    updateCityName = (newName) => {
+        this.setState({
+            actualCity: newName
+        })
+    }
+
+
     render() {
+
         return(
             <div className="container pt-5 align-content-center App-container">
-                <header className="container-fluid align-content-center">
-                    <CityForm />
-                </header>
-                <main className="container pt-5, align-content-center">
-
-                </main>
-            </div>)
+                <CityForm updateCityName={this.updateCityName}/>
+                <WeatherInfo actualCity={this.state.actualCity} />
+            </div>
+        )
     }
 
 }
