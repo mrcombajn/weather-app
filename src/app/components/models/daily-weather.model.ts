@@ -4,7 +4,11 @@ export interface DailyForecast {
     lon: number;
     timezone: string;
     timezone_offset: number;
-
+    current: CurrentWeather;
+    minutely: Minutely[];
+    hourly: Hourly[];
+    daily: Daily[];
+    alerts: Alert[];    
 }
 
 export interface CurrentWeather {
@@ -25,10 +29,6 @@ export interface CurrentWeather {
     rain?: Precipitation;
     snow?: Precipitation;
     weather: Weather[];
-    minutely: Minutely[];
-    hourly: Hourly[];
-    daily: Daily[];
-    alerts: Alert[];
 }
 
 export interface Precipitation {
